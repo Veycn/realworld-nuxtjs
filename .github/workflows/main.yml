@@ -1,4 +1,4 @@
-name: Publish And Deploy Demo
+name: Publish And Deploy
 on:
   push:
     tags:
@@ -53,8 +53,8 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-          cd /root/realworld-nuxtjs
-          wget https://github.com/xbl113lbw/realworld-nuxtjs/releases/latest/download/release.tgz -O release.tgz
+          cd /root/web
+          wget https://github.com/Veycn/realworld-nuxtjs/releases/latest/download/release.tgz -O release.tgz
           tar zxvf release.tgz
           npm install --production
           pm2 reload pm2.config.json
